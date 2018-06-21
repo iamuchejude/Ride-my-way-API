@@ -4,28 +4,23 @@ class Rides {
   constructor() {
     this.ridesOffers = [];
 
-    // Populating ride Offers with 5 offers
     for (let i = 1; i <= 5; i += 1) {
       this.ridesOffers.push({
         id: i,
-        user_id: ngfaker.random.number({ min: 1, max: 10 }),
-        start_point: ngfaker.address.localGovernment('lagos'),
+        userId: ngfaker.random.number({ min: 1, max: 10 }),
+        startPoint: ngfaker.address.localGovernment('lagos'),
         destination: ngfaker.address.localGovernment('lagos'),
         price: ngfaker.random.number({ min: 500, max: 7000 }),
         seat: ngfaker.random.number({ min: 1, max: 6 }),
-        departure_date: '24th June, 2018',
-        departure_time: '05:34:00AM',
-        created_date: new Date(),
+        departureDate: '24th June, 2018',
+        departureTime: '05:34:00AM',
+        createdDate: new Date(),
       });
     }
   }
 
   getOffers() {
     return this.rideOffers;
-  }
-
-  addOffer(data) {
-    this.ridesOffers.push(data);
   }
 
   getOneOffer(id) {
@@ -35,6 +30,11 @@ class Rides {
     }
     return ride;
   }
+
+  addOffer(data) {
+    this.ridesOffers.push(data);
+  }
 }
 
 module.exports = Rides;
+export { Rides as default };

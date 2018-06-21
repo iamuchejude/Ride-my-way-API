@@ -19,9 +19,24 @@ class Users {
     }
   }
 
-  get() {
+  getUsers() {
     return this.users;
+  }
+
+  getOneUser(id) {
+    let user;
+    for (let i = 1; i <= this.users.length; i += 1) {
+      if (this.users[i].id === id) {
+        user = this.users[i];
+      }
+    }
+    return user;
+  }
+
+  addUser(data) {
+    this.users.push(data);
   }
 }
 
 module.exports = Users;
+export { Users as default };
