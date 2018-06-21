@@ -1,6 +1,6 @@
 import ngfaker from 'ng-faker';
 
-class Rides {
+class RideOffers {
   constructor() {
     this.ridesOffers = [];
 
@@ -24,11 +24,10 @@ class Rides {
   }
 
   getOneOffer(id) {
-    let ride;
     for (let i = 0; i < this.ridesOffers.length; i += 1) {
-      if (this.ridesOffers[i].id === id) ride = this.ridesOffers[i];
+      if (this.ridesOffers[i].id === id) return this.ridesOffers[i];
     }
-    return ride;
+    return false;
   }
 
   addOffer(data) {
@@ -36,5 +35,5 @@ class Rides {
   }
 }
 
-module.exports = Rides;
-export { Rides as default };
+module.exports = RideOffers;
+export { RideOffers as default };

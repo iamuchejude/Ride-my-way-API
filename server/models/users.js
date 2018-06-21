@@ -24,13 +24,10 @@ class Users {
   }
 
   getOneUser(id) {
-    let user;
     for (let i = 1; i <= this.users.length; i += 1) {
-      if (this.users[i].id === id) {
-        user = this.users[i];
-      }
+      if (this.users[i].id === id) return this.users[i];
     }
-    return user;
+    return false;
   }
 
   addUser(data) {
