@@ -10,7 +10,7 @@
     "build": "mkdir dist && babel src -d dist && babel --presets es2015 server -d src && mocha"
   },
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "git+https://github.com/iamuchejude/Ride-my-way-API.git"
   },
   "keywords": [
@@ -36,6 +36,8 @@
     "mocha": "^5.2.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "ng-faker": "^1.0.1",
     "pino": "^4.17.3"
