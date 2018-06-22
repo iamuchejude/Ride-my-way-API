@@ -4,10 +4,10 @@
   "description": "Ride-my-way API with Data Structure for Storage",
   "main": "dist/app.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "npm run build && nodemon dist/app.js",
     "test": "mocha",
     "clean": "rm -rf src",
-    "build": "mkdir dist && babel src -d dist && babel --presets es2015 src -d dist"
+    "build": "mkdir dist && babel src -d dist && babel --presets es2015 src -d dist" 
   },
   "repository": {
     "type": "git",

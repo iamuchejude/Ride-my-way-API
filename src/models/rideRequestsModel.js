@@ -1,6 +1,6 @@
 import ngfaker from 'ng-faker';
 
-class RideRequests {
+module.exports = class RideRequests {
   constructor() {
     this.rideRequests = [];
 
@@ -13,11 +13,11 @@ class RideRequests {
     }
   }
 
-  getRequests() {
+  static getRequests() {
     return this.rideRequests;
   }
 
-  getOneRideRequest(id) {
+  static getOneRideRequest(id) {
     let rideRequest;
     for (let i = 0; i < this.rideRequests.length; i += 1) {
       if (this.rideRequests[i].id === id) {
@@ -27,10 +27,7 @@ class RideRequests {
     return rideRequest;
   }
 
-  createRequest(data) {
+  static createRequest(data) {
     this.rideRequests.push(data);
   }
-}
-
-module.exports = RideRequests;
-export { RideRequests as default };
+};

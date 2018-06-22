@@ -1,7 +1,8 @@
-import RideOffers from '../models/rideOffers';
-import RideRequests from '../models/rideRequests';
-
-class Rides {
+import RideOffers from '../models/rideOffersModel';
+// const RideOffers = require('../models/rideOffersModel');
+// import RideRequests from '../models/rideRequestsModel';
+// console.log(RideOffers.getOffers());
+module.exports = class Rides {
   static getAllRideOffers(req, res) {
     if (RideOffers.getOffers().length >= 1) {
       res.status(200).json({
@@ -9,12 +10,12 @@ class Rides {
         message: 'Available ride offers',
         data: RideOffers.getOffers(),
       });
-    } else {
-      res.status(400).json({
-        status: 'error',
-        message: 'No available ride offer',
-      });
     }
+
+    res.status(404).json({
+      status: 'error',
+      message: 'No Ride Offer available',
+    });
   }
 
   static getOneRideOffer(req, res) {
@@ -128,8 +129,4 @@ class Rides {
       });
     }
   }
-}
-
-module.exports = Rides;
-export { Rides as default };
-
+};
