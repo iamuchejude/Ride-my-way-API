@@ -1,15 +1,7 @@
-'use strict';
+import express from 'express';
+import router from './routes/rides';
 
-var _express = require('express');
-
-var _express2 = _interopRequireDefault(_express);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var app = (0, _express2.default)();
-
-app.get('/', function (req, res) {
-  res.send('Working well and fine');
-});
+const app = express();
+app.use('api/v1', router);
 
 module.export = app;

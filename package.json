@@ -4,12 +4,13 @@
   "description": "Ride-my-way API with Data Structure for Storage",
   "main": "src/server.js",
   "scripts": {
-    "start": "babel server -d src && babel --presets es2015 server -d src && mocha && nodemon",
+    "start": "nodemon",
     "test": "mocha",
-    "build": "babel server -d src && babel --presets es2015 server -d src"
+    "clean": "rm -rf src",
+    "build": "mkdir dist && babel src -d dist && babel --presets es2015 server -d src && mocha"
   },
   "repository": {
-    "type": "git",
+    "type": "git", 
     "url": "git+https://github.com/iamuchejude/Ride-my-way-API.git"
   },
   "keywords": [

@@ -1,18 +1,7 @@
-'use strict';
+import http from 'http';
+import app from './app';
 
-var _http = require('http');
+const port = process.env.PORT || 3000;
+const server = http.createServer(app);
 
-var _http2 = _interopRequireDefault(_http);
-
-var _app = require('./app');
-
-var _app2 = _interopRequireDefault(_app);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var port = process.env.PORT || 3000;
-var server = _http2.default.createServer(_app2.default);
-
-server.listen(port, function () {
-  console.log('Listening on Port ' + port);
-});
+server.listen(port); // \r \n

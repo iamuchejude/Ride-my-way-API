@@ -1,13 +1,8 @@
-'use strict';
+const ngfaker = require('ng-faker');
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var ngfaker = require('ng-faker');
+const ridesOffers = [];
 
-var ridesOffers = [];
-
-for (var i = 1; i <= 5; i += 1) {
+for (let i = 1; i <= 5; i += 1) {
   ridesOffers.push({
     id: i,
     userId: i + 2,
@@ -17,9 +12,9 @@ for (var i = 1; i <= 5; i += 1) {
     seat: ngfaker.random.number({ min: 1, max: 6 }),
     departureDate: '24th June, 2018',
     departureTime: '05:34:00AM',
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
   });
 }
 
 module.exports = ridesOffers;
-exports.default = ridesOffers;
+export { ridesOffers as default };

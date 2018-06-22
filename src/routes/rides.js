@@ -12,6 +12,8 @@ router.get('/', (req, res) => {
 
 router.get('/rides', rides.getAllRideOffers);
 router.get('/rides/:id', rides.getOneRideOffer);
+router.post('/rides', rides.createRideOffer);
+router.post('/ride/:id/requests', rides.createRideRequest);
 
 
 module.exports = router;
