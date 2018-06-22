@@ -12,7 +12,9 @@ app.use(bodyParser.json({ type: 'application/*+json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('api/v1', router);
 
-const server = app.listen(port);
+const server = app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
 
 export default app;
 exports.server = server;
